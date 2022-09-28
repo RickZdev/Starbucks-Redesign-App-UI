@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
-import { useNavigation } from '@react-navigation/native'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 import COLORS from '../global/COLORS'
 
 const CustomDrawer = (props) => {
-  const navigation = useNavigation();
   return (
     <View style={styles.drawerContainer}>
       <DrawerContentScrollView {...props}>
@@ -19,15 +17,15 @@ const CustomDrawer = (props) => {
           <TouchableOpacity style={styles.avatarContainer}>
             <View style={styles.photoContainer}>
               <Image
-                source={require('../assets/images/avatar-1.png')}
+                source={require('../assets/images/pogs.jpg')}
                 resizeMode='cover'
                 style={styles.avatar}
               />
             </View>
           </TouchableOpacity>
           <View style={styles.userDetailsContainer}>
-            <Text style={styles.userTextName}>Frederick</Text>
-            <Text style={styles.userTextEmail}>Castaneda</Text>
+            <Text style={styles.userTextName} className='font-gilroyExtraBold text-primary'>Frederick Castaneda Jr.</Text>
+            <Text style={styles.userTextEmail} className='font-gilroyBold text-primary'>Certified Coffee Lover</Text>
           </View>
         </View>
         <DrawerItemList {...props} />
@@ -74,11 +72,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: 'center'
   },
-  userTextName: {
-
-  },
   userTextEmail: {
-
     fontSize: 12,
   },
   footerContainer: {
@@ -87,11 +81,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 15,
     paddingLeft: 15,
-    borderTopWidth: 1,
-
+    borderColor: 'black'
   },
   logoutText: {
-
+    fontFamily: 'Gilroy-ExtraBold',
     fontSize: 12,
     letterSpacing: 1,
     paddingLeft: 10,

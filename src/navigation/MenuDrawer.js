@@ -2,12 +2,15 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Feather from 'react-native-vector-icons/Feather'
+import Fontisto from 'react-native-vector-icons/Fontisto'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import CustomDrawer from '../components/CustomDrawer'
 import COLORS from '../global/COLORS'
 
 import AppStack from './AppStack'
-import NiceScreen from '../screens/NiceScreen'
+import OrderScreen from '../screens/OrderScreen'
+import ProfileScreen from '../screens/ProfileScreen'
+import SettingsScreen from '../screens/SettingsScreen'
 
 const Drawer = createDrawerNavigator();
 
@@ -17,24 +20,33 @@ const MenuDrawer = () => {
       <Drawer.Navigator
         screenOptions={{
           headerShown: false,
-          drawerPosition: "right",
-          drawerType: 'front',
-          drawerLabelStyle: { marginLeft: -20 },
-          drawerActiveBackgroundColor: COLORS.black,
+          drawerPosition: "left",
+          drawerType: 'slide',
+          drawerLabelStyle: { marginLeft: -20, fontSize: 14, fontFamily: 'Gilroy-ExtraBold' },
+          drawerActiveBackgroundColor: COLORS.primary,
           drawerActiveTintColor: COLORS.white,
         }}
         drawerContent={props => <CustomDrawer {...props} />} >
-        <Drawer.Screen name="Home" component={AppStack}/>
-        <Drawer.Screen name="NiceScreen" component={NiceScreen}
+        <Drawer.Screen name="Home" component={AppStack}
+          options={{
+            drawerLabel: 'Home',
+            drawerIcon: ({ color }) => <Fontisto name="home" size={18} color={color} />,
+          }} />
+        <Drawer.Screen name="ProfileScreen" component={ProfileScreen}
+          options={{
+            drawerLabel: 'Profile',
+            drawerIcon: ({ color }) => <Fontisto name="coffeescript" size={18} color={color} />,
+          }} />
+        <Drawer.Screen name="OrderScreen" component={OrderScreen}
           options={{
             drawerLabel: 'Track My Orders',
-            drawerIcon: ({ size, color }) => <Feather name="package" size={size} color={color} />,
+            drawerIcon: ({ color }) => <Feather name="package" size={18} color={color} />,
           }} />
-        {/* <Drawer.Screen name="OrderHistoryDrawer" component={OrderHistoryDrawer}
+        <Drawer.Screen name="SettingsScreen" component={SettingsScreen}
           options={{
-            drawerLabel: 'Order History',
-            drawerIcon: ({ size, color }) => <MaterialCommunityIcons name="history" size={size} color={color} />,
-          }} /> */}
+            drawerLabel: 'Settings',
+            drawerIcon: ({ color }) => <MaterialCommunityIcons name="cog-outline" size={18} color={color} />,
+          }} />
       </Drawer.Navigator>
     </View>
   )
