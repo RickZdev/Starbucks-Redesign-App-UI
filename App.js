@@ -5,6 +5,7 @@ import { TailwindProvider } from "tailwindcss-react-native";
 import { LogBox } from 'react-native';
 
 import AppStack from './src/navigation/AppStack';
+import MenuDrawer from './src/navigation/MenuDrawer';
 
 const App = () => {
   // hidden yellow warnings
@@ -13,7 +14,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <TailwindProvider>
-        <AppStack />
+        <MenuDrawer />
       </TailwindProvider>
     </NavigationContainer>
   );

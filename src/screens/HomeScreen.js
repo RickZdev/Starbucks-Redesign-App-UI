@@ -10,7 +10,7 @@ import CategoryList from '../components/CategoryList'
 import PromoList from '../components/PromoList'
 import ProductList from '../components/ProductList'
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [category, setCategory] = useState(0);
 
   const handleCategory = (index) => {
@@ -23,7 +23,7 @@ const HomeScreen = () => {
         <View className='px-10'>
           {/* navigation */}
           <View className='flex-row justify-between '>
-          <Feather name='menu' size={28} color={COLORS.secondary} />
+          <Feather name='menu' size={28} color={COLORS.secondary} onPress={() => navigation.openDrawer()}/>
             <BellIcon size={28} color={COLORS.secondary}/>
           </View>
           
