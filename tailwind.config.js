@@ -6,11 +6,13 @@ module.exports = {
     extend: {
       colors: {
         primary: '#225125',
-        secondary: '#C4C4C4'
+        secondary: 'rgba(0, 0, 0, 0.6)'
       },
       fontFamily: {
         gilroyExtraBold: 'Gilroy-ExtraBold',
-        gilroyLight: 'Gilroy-Light'
+        gilroyBold: 'Gilroy-Bold',
+        gilroySemiBold: 'Gilroy-Semibold',
+        gilroyLight: 'Gilroy-Light',
       }
     },
   },

@@ -1,4 +1,4 @@
 export default COLOR = {
   primary: '#225125',
-  secondary: '#C4C4C4'
+  secondary: 'rgba(0, 0, 0, 0.6)'
 }
